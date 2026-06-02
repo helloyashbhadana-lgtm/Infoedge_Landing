@@ -21,6 +21,7 @@ const businesses: Business[] = [
     logo: "/assets/naukri_logo_ourbusiness.svg",
     hoverLogo: "/assets/naukri_logo.svg",
     name: "Naukri",
+    logoWidth: 160,
     logoHeight: 50,
     brandColor: "#265DF5",
     description:
@@ -31,6 +32,7 @@ const businesses: Business[] = [
   {
     logo: "/assets/js_logo_ourbusiness.svg",
     name: "Jeevansathi",
+    logoWidth: 160,
     logoHeight: 40,
     brandColor: "#E63157",
     description:
@@ -41,6 +43,7 @@ const businesses: Business[] = [
   {
     logo: "/assets/99acres_logo.svg",
     name: "99acres",
+    logoWidth: 160,
     logoHeight: 36,
     defaultLogoColor: true,
     brandColor: "#1A81C3",
@@ -52,6 +55,8 @@ const businesses: Business[] = [
   {
     logo: "/assets/shiksha_logo_ourbusiness.svg",
     name: "Shiksha",
+    logoWidth: 160,
+    logoHeight: 48,
     brandColor: "#01808C",
     description:
       "An education platform helping students choose courses, colleges, and careers at education and employability’s growing intersection.",
