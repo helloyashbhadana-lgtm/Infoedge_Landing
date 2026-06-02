@@ -1,0 +1,255 @@
+/* ===== AI at the Core Section ===== */
+.ai-core {
+  padding: 87px 0;
+  position: relative;
+}
+
+/* Full-width dark bg that expands behind the card */
+.ai-core__bg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 1200px;
+  height: 552px;
+  background: #030411;
+  z-index: 0;
+  will-change: width, height;
+}
+
+.ai-core__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Main card — now transparent, bg handled separately ===== */
+.ai-core__card {
+  width: 100%;
+  height: 552px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  gap: 60px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* ===== Left — image area ===== */
+.ai-core__image-area {
+  position: relative;
+  width: 542px;
+  height: 100%;
+  flex-shrink: 0;
+}
+
+/* Blue glow behind the photo */
+.ai-core__image-glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 380px;
+  height: 420px;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(39, 93, 245, 1) 0%,
+    rgba(39, 93, 245, 0.7) 25%,
+    rgba(39, 93, 245, 0.4) 45%,
+    rgba(39, 93, 245, 0.15) 65%,
+    transparent 85%
+  );
+  filter: blur(40px);
+  opacity: 0;
+  transition: opacity 1.2s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ai-core__image-glow--visible {
+  opacity: 1;
+}
+
+/* Person photo frame */
+.ai-core__image-frame {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 542px;
+  height: 489px;
+  z-index: 2;
+  overflow: hidden;
+}
+
+.ai-core__image-frame img {
+  object-fit: cover;
+  object-position: top center;
+}
+
+/* ===== Right — content area ===== */
+.ai-core__content {
+  width: 520px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0;
+  position: relative;
+  z-index: 3;
+}
+
+/* ===== Heading with gradient sweep ===== */
+.ai-core__heading {
+  font-size: 50px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: -0.5px;
+  color: #FFFFFF;
+  margin: 0 0 24px;
+}
+
+.ai-core__heading-sweep {
+  display: inline;
+  background-image: linear-gradient(
+    90deg,
+    #FFFFFF 0%,
+    #FFFFFF calc(50% - 100px),
+    #9333EA calc(50% - 80px),
+    #3B82F6 calc(50% - 40px),
+    #F5F0E8 calc(50% - 5px),
+    #EAB308 calc(50% + 30px),
+    #F97316 calc(50% + 60px),
+    #EC4899 calc(50% + 100px),
+    #FFFFFF calc(50% + 100px),
+    #FFFFFF 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: ai-sweep 1.8s cubic-bezier(0.22, 0.6, 0.36, 1) forwards;
+}
+
+@keyframes ai-sweep {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+/* After sweep: solid white */
+.ai-core__heading-solid {
+  color: #FFFFFF;
+}
+
+/* ===== Body text ===== */
+.ai-core__text {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  letter-spacing: 0px;
+  color: rgba(255, 255, 255, 0.65);
+  margin: 0 0 20px;
+  max-width: 520px;
+}
+
+/* ===== Signature ===== */
+.ai-core__signature {
+  margin-top: 32px;
+}
+
+.ai-core__signature-img {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.ai-core__signature-title {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.4);
+  display: block;
+}
+
+/* ===== Responsive — Tablet ===== */
+@media (max-width: 1023px) {
+  .ai-core__card {
+    height: auto;
+    min-height: 480px;
+  }
+
+  .ai-core__bg {
+    height: 100%;
+  }
+
+  .ai-core__image-area {
+    width: 360px;
+  }
+
+  .ai-core__image-frame {
+    width: 300px;
+    height: 380px;
+  }
+
+  .ai-core__heading {
+    font-size: 42px;
+    line-height: 50px;
+  }
+
+  .ai-core__content {
+    padding: 40px 40px 40px 20px;
+  }
+}
+
+/* ===== Responsive — Mobile ===== */
+@media (max-width: 767px) {
+  .ai-core {
+    padding: 60px 0;
+  }
+
+  .ai-core__card {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .ai-core__bg {
+    height: 100%;
+  }
+
+  .ai-core__image-area {
+    width: 100%;
+    height: 360px;
+  }
+
+  .ai-core__image-frame {
+    width: 260px;
+    height: 300px;
+  }
+
+  .ai-core__image-glow {
+    width: 240px;
+    height: 280px;
+  }
+
+  .ai-core__content {
+    padding: 32px 24px;
+  }
+
+  .ai-core__heading {
+    font-size: 34px;
+    line-height: 42px;
+    letter-spacing: -1.5px;
+  }
+
+  .ai-core__text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+}

@@ -1,0 +1,219 @@
+/* ===== Built on Purpose Section ===== */
+.built-on-purpose {
+  padding: 87px 0;
+}
+
+.built-on-purpose__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+/* ===== Header row: heading left, description right ===== */
+.built-on-purpose__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.built-on-purpose__heading {
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 62px;
+  letter-spacing: -2px;
+  color: var(--color-text-primary);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.built-on-purpose__description {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0px;
+  color: var(--color-text-muted);
+  width: 480px;
+  flex-shrink: 0;
+  margin: 0;
+  padding-top: 0;
+  text-align: left;
+}
+
+/* ===== Cards grid ===== */
+.built-on-purpose__cards {
+  display: grid;
+  grid-template-columns: repeat(3, 380px);
+  gap: 30px;
+}
+
+/* ===== Card wrapper — holds glow + card ===== */
+.built-on-purpose__card-wrapper {
+  position: relative;
+  perspective: 800px;
+  width: 380px;
+  height: 300px;
+}
+
+/* ===== Gradient glow behind card ===== */
+.built-on-purpose__glow {
+  position: absolute;
+  inset: -6px;
+  border-radius: 4px;
+  opacity: 0;
+  filter: blur(20px);
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.built-on-purpose__card-wrapper:nth-child(1) .built-on-purpose__glow {
+  background: linear-gradient(
+    135deg,
+    rgba(168, 130, 255, 0.5) 0%,
+    rgba(255, 150, 200, 0.4) 40%,
+    rgba(255, 190, 150, 0.4) 70%,
+    rgba(255, 220, 170, 0.3) 100%
+  );
+}
+
+.built-on-purpose__card-wrapper:nth-child(2) .built-on-purpose__glow {
+  background: linear-gradient(
+    135deg,
+    rgba(100, 200, 255, 0.5) 0%,
+    rgba(150, 230, 200, 0.4) 40%,
+    rgba(255, 190, 220, 0.4) 70%,
+    rgba(255, 170, 150, 0.3) 100%
+  );
+}
+
+.built-on-purpose__card-wrapper:nth-child(3) .built-on-purpose__glow {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 170, 120, 0.5) 0%,
+    rgba(255, 140, 180, 0.4) 40%,
+    rgba(200, 140, 255, 0.4) 70%,
+    rgba(140, 180, 255, 0.3) 100%
+  );
+}
+
+.built-on-purpose__card-wrapper:hover .built-on-purpose__glow {
+  opacity: 1;
+}
+
+/* ===== Card ===== */
+.built-on-purpose__card {
+  height: 100%;
+  border: 1px solid #E0E0E0;
+  border-radius: 0;
+  padding: 40px;
+  padding-bottom: 40px;
+  position: relative;
+  overflow: hidden;
+  background: var(--color-bg);
+  transition: border-color 0.3s ease;
+  z-index: 1;
+  will-change: transform;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.built-on-purpose__card-wrapper:hover .built-on-purpose__card {
+  border-color: transparent;
+}
+
+/* ===== Card icon ===== */
+.built-on-purpose__icon {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  color: var(--color-text-primary);
+}
+
+/* ===== Card title ===== */
+.built-on-purpose__card-title {
+  font-size: 24px;
+  font-weight: 600;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ===== Card text ===== */
+.built-on-purpose__card-text {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 0px;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
+/* ===== Responsive — Tablet ===== */
+@media (max-width: 1023px) {
+  .built-on-purpose__heading {
+    font-size: 42px;
+    line-height: 50px;
+  }
+
+  .built-on-purpose__header {
+    gap: 40px;
+  }
+
+  .built-on-purpose__cards {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .built-on-purpose__card-wrapper {
+    height: auto;
+  }
+
+  .built-on-purpose__card {
+    padding: 32px;
+  }
+}
+
+/* ===== Responsive — Mobile ===== */
+@media (max-width: 767px) {
+  .built-on-purpose {
+    padding: 60px 0;
+  }
+
+  .built-on-purpose__header {
+    flex-direction: column;
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+
+  .built-on-purpose__heading {
+    font-size: 34px;
+    line-height: 42px;
+    letter-spacing: -1.5px;
+  }
+
+  .built-on-purpose__description {
+    font-size: 16px;
+    line-height: 24px;
+    padding-top: 0;
+  }
+
+  .built-on-purpose__cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .built-on-purpose__card-wrapper {
+    height: auto;
+  }
+
+  .built-on-purpose__card {
+    padding: 24px;
+  }
+}

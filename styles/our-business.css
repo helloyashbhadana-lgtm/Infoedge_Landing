@@ -1,0 +1,264 @@
+.our-business {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 87px 20px;
+  background-color: #ffffff;
+}
+
+/* ===== Header: title left, description right ===== */
+.our-business__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+  margin-bottom: 60px;
+}
+
+.our-business__heading {
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 62px;
+  letter-spacing: -2px;
+  color: var(--color-text-primary);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.our-business__description {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0px;
+  color: var(--color-text-muted);
+  width: 480px;
+  flex-shrink: 0;
+  margin: 0;
+  text-align: left;
+}
+
+/* ===== Cards grid ===== */
+.our-business__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+/* ===== Card ===== */
+.our-business__card {
+  width: 290px;
+  height: 420px;
+  background-color: #ffffff;
+  border: 1.5px solid #E0E0E3;
+  border-radius: 0px;
+  padding: 40px 32px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0;
+}
+
+/* ===== Card hover ===== */
+.our-business__card {
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: border-color 0.45s ease, box-shadow 0.45s ease, transform 0.45s ease;
+}
+
+.our-business__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, #000000 0%, var(--brand-color) 100%);
+  opacity: 0;
+  transition: opacity 0.45s ease;
+  z-index: -1;
+}
+
+.our-business__card:hover::before {
+  opacity: 1;
+}
+
+.our-business__card:hover {
+  border-color: var(--brand-color);
+  box-shadow: 0 40px 60px 0px color-mix(in srgb, var(--brand-color) 30%, transparent);
+  transform: translateY(-10px);
+}
+
+.our-business__card:hover .our-business__card-logo {
+  filter: brightness(0) invert(1);
+  transition: filter 0.35s ease;
+}
+
+.our-business__card:hover .our-business__card-logo--hover {
+  filter: none;
+}
+
+.our-business__card:hover .our-business__card-desc {
+  color: rgba(255, 255, 255, 0.75);
+  transition: color 0.35s ease;
+}
+
+.our-business__card:hover .our-business__card-revenue {
+  color: #ffffff;
+  transition: color 0.35s ease;
+}
+
+.our-business__card:hover .our-business__card-label {
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.35s ease;
+}
+
+.our-business__card-logo-wrap {
+  position: relative;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.our-business__card-logo--default {
+  transition: opacity 0.35s ease;
+}
+
+.our-business__card-logo--hover {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.35s ease;
+}
+
+.our-business__card-logo-wrap[data-has-hover="true"] .our-business__card-logo--default {
+  transition: opacity 0.35s ease;
+}
+
+.our-business__card:hover .our-business__card-logo-wrap[data-has-hover="true"] .our-business__card-logo--default {
+  opacity: 0;
+}
+
+.our-business__card:hover .our-business__card-logo--hover {
+  opacity: 1;
+}
+
+.our-business__card-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+}
+
+/* Tint white SVG to #1981C3 in default state */
+.our-business__card-logo--brand-tint {
+  filter: brightness(0) saturate(100%) invert(38%) sepia(93%) saturate(747%) hue-rotate(175deg) brightness(92%) contrast(95%);
+  transition: filter 0.35s ease;
+}
+
+.our-business__card:hover .our-business__card-logo--brand-tint {
+  filter: brightness(0) invert(1);
+}
+
+.our-business__card-logo--auto {
+  height: auto;
+  width: auto;
+  max-height: 60px;
+  object-fit: contain;
+  margin-bottom: 24px;
+}
+
+.our-business__card-desc {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+  letter-spacing: 0px;
+  color: var(--color-text-primary);
+  margin: 0;
+  flex: 1;
+}
+
+.our-business__card-bottom {
+  margin-top: auto;
+  padding-bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.our-business__card-revenue {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: var(--color-text-primary);
+  margin: 0 0 8px;
+}
+
+.our-business__card-label {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text-muted);
+  text-transform: none;
+}
+
+/* ===== Responsive — Tablet ===== */
+@media (max-width: 1023px) {
+  .our-business {
+    padding: 60px 40px;
+  }
+
+  .our-business__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .our-business__description {
+    width: 100%;
+  }
+
+  .our-business__heading {
+    font-size: 42px;
+    line-height: 50px;
+  }
+
+  .our-business__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .our-business__card-revenue {
+    font-size: 36px;
+  }
+}
+
+/* ===== Responsive — Mobile ===== */
+@media (max-width: 767px) {
+  .our-business {
+    padding: 40px 20px;
+  }
+
+  .our-business__heading {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1px;
+  }
+
+  .our-business__grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .our-business__card {
+    padding: 32px 24px;
+  }
+
+  .our-business__card-revenue {
+    font-size: 32px;
+  }
+
+  .our-business__card-desc {
+    min-height: auto;
+  }
+}

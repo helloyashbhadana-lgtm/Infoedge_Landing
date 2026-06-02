@@ -1,0 +1,180 @@
+/* ===== Hero to Business Transition ===== */
+.htb {
+  height: 100vh;
+  position: relative;
+  background-color: #ffffff;
+  overflow: hidden;
+}
+
+.htb__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  height: 100%;
+  position: relative;
+}
+
+/* ===== Floating icons layer ===== */
+.htb__icons-layer {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.htb__icon-box {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: 1.5px solid #E0E0E3;
+  border-radius: 20px;
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  overflow: hidden;
+  will-change: transform, width, height;
+}
+
+.htb__icon-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 16px;
+  object-fit: cover;
+  flex-shrink: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* ===== Card content (hidden initially) ===== */
+.htb__card-content {
+  opacity: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 32px 24px 40px;
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.htb__card-logo {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+  margin-bottom: 20px;
+}
+
+.htb__card-logo--tint {
+  filter: brightness(0) saturate(100%) invert(38%) sepia(93%) saturate(747%) hue-rotate(175deg) brightness(92%) contrast(95%);
+}
+
+.htb__card-desc {
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 22px;
+  color: var(--color-text-primary);
+  margin: 0;
+  flex: 1;
+}
+
+.htb__card-bottom {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.htb__card-revenue {
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -2px;
+  color: var(--color-text-primary);
+  margin: 0 0 8px;
+}
+
+.htb__card-label {
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--color-text-muted);
+}
+
+/* ===== Section header ===== */
+.htb__header {
+  opacity: 0;
+  position: absolute;
+  top: 60px;
+  left: 20px;
+  right: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 60px;
+}
+
+.htb__heading {
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 62px;
+  letter-spacing: -2px;
+  color: var(--color-text-primary);
+  margin: 0;
+  flex-shrink: 0;
+}
+
+.htb__description {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  color: var(--color-text-muted);
+  width: 480px;
+  flex-shrink: 0;
+  margin: 0;
+  text-align: left;
+}
+
+/* ===== Responsive — Tablet ===== */
+@media (max-width: 1023px) {
+  .htb__header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .htb__description {
+    width: 100%;
+  }
+
+  .htb__heading {
+    font-size: 42px;
+    line-height: 50px;
+  }
+
+  .htb__card-revenue {
+    font-size: 36px;
+  }
+}
+
+/* ===== Responsive — Mobile ===== */
+@media (max-width: 767px) {
+  .htb__heading {
+    font-size: 32px;
+    line-height: 40px;
+    letter-spacing: -1px;
+  }
+
+  .htb__card-revenue {
+    font-size: 32px;
+  }
+}

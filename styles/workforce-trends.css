@@ -1,0 +1,171 @@
+/* ===== Workforce Trends Section ===== */
+.workforce-trends {
+  padding: 95px 0;
+  overflow: hidden;
+}
+
+.workforce-trends__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 0 0 40px;
+  padding-left: max(20px, calc((100vw - 1200px) / 2));
+  padding-right: max(20px, calc((100vw - 1200px) / 2));
+}
+
+/* ===== Section heading ===== */
+.workforce-trends__heading {
+  font-size: 52px;
+  font-weight: 400;
+  line-height: 62px;
+  letter-spacing: -2px;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+/* ===== Navigation arrows ===== */
+.workforce-trends__nav {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  margin-top: 12px;
+}
+
+.workforce-trends__arrow {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 1px solid #D0D0D0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--color-text-primary);
+  transition: background-color 0.25s ease, border-color 0.25s ease;
+}
+
+.workforce-trends__arrow:hover {
+  background-color: #F5F5F5;
+  border-color: #A0A0A0;
+}
+
+.workforce-trends__arrow:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.workforce-trends__arrow:disabled:hover {
+  background: transparent;
+  border-color: #D0D0D0;
+}
+
+/* ===== Scrollable track ===== */
+/* Track starts aligned to 1200px container but scrolls edge-to-edge */
+.workforce-trends__track-wrapper {
+  overflow: visible;
+  /* Left margin aligns with the 1200px container */
+  margin-left: max(20px, calc((100vw - 1200px) / 2));
+}
+
+.workforce-trends__track {
+  display: flex;
+  gap: 20px;
+  transition: transform 0.5s cubic-bezier(0.25, 0.1, 0.25, 1);
+  /* Allow cards to extend beyond right edge */
+  padding-right: 40px;
+}
+
+/* ===== Card ===== */
+.workforce-trends__card {
+  flex-shrink: 0;
+  width: 300px;
+  cursor: pointer;
+}
+
+.workforce-trends__cover {
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  position: relative;
+}
+
+.workforce-trends__cover img {
+  filter: grayscale(100%);
+  transition: filter 0.4s ease;
+}
+
+.workforce-trends__card:hover .workforce-trends__cover img {
+  filter: grayscale(0%);
+}
+
+.workforce-trends__date {
+  font-size: 22px;
+  font-weight: 500;
+  color: var(--color-text-primary);
+  letter-spacing: -0.5px;
+  margin-top: 20px;
+  display: block;
+}
+
+/* ===== Responsive — Tablet ===== */
+@media (max-width: 1023px) {
+  .workforce-trends__heading {
+    font-size: 42px;
+    line-height: 50px;
+  }
+
+  .workforce-trends__track-wrapper {
+    margin-left: 40px;
+  }
+
+  .workforce-trends__card {
+    width: 260px;
+  }
+
+  .workforce-trends__cover {
+    width: 260px;
+    height: 347px;
+  }
+}
+
+/* ===== Responsive — Mobile ===== */
+@media (max-width: 767px) {
+  .workforce-trends {
+    padding: 60px 0;
+  }
+
+  .workforce-trends__heading {
+    font-size: 34px;
+    line-height: 42px;
+    letter-spacing: -1.5px;
+  }
+
+  .workforce-trends__header {
+    margin-bottom: 28px;
+    padding: 0 16px;
+  }
+
+  .workforce-trends__track-wrapper {
+    margin-left: 16px;
+  }
+
+  .workforce-trends__card {
+    width: 220px;
+  }
+
+  .workforce-trends__cover {
+    width: 220px;
+    height: 293px;
+  }
+
+  .workforce-trends__arrow {
+    width: 36px;
+    height: 36px;
+  }
+
+  .workforce-trends__date {
+    font-size: 18px;
+    margin-top: 14px;
+  }
+}

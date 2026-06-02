@@ -1,0 +1,231 @@
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  height: 90vh;
+  position: relative;
+  padding-top: 64px;
+  background-color: #ffffff;
+}
+
+/* ===== Content wrapper — true vertical center ===== */
+.hero__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+}
+
+/* ===== Heading ===== */
+.hero__heading {
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: -2px;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== Line containers ===== */
+.hero__line {
+  display: block;
+}
+
+.hero__line-inner {
+  display: inline;
+  color: #000000;
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: -2px;
+}
+
+/* Word spans — only used during blur animation phase */
+.hero__word {
+  display: inline-block;
+  font-size: 100px;
+  font-weight: 400;
+  line-height: 60px;
+  letter-spacing: -2px;
+}
+
+/* ===== Gradient sweep ===== */
+/* Applied to .hero__line-inner AFTER blur phase swaps to plain text (no child spans) */
+.hero__line-inner--sweep {
+  display: inline;
+  background-image: linear-gradient(
+    90deg,
+    #000000 0%,
+    #000000 calc(50% - 100px),
+    #9333EA calc(50% - 80px),
+    #3B82F6 calc(50% - 40px),
+    #F5F0E8 calc(50% - 5px),
+    #EAB308 calc(50% + 30px),
+    #F97316 calc(50% + 60px),
+    #EC4899 calc(50% + 100px),
+    #000000 calc(50% + 100px),
+    #000000 100%
+  );
+  background-size: 300% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  animation: gradient-sweep var(--sweep-duration, 1.6s) cubic-bezier(0.22, 0.6, 0.36, 1) forwards;
+}
+
+@keyframes gradient-sweep {
+  0% {
+    background-position: 100% 0;
+  }
+  100% {
+    background-position: 0% 0;
+  }
+}
+
+/* ===== Stats row ===== */
+.hero__stats {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  margin-top: 65px;
+}
+
+.hero__stat-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 0 48px;
+}
+
+.hero__stat-number {
+  font-size: 32px;
+  font-weight: 500;
+  letter-spacing: -0.5px;
+  color: #000000;
+}
+
+.hero__stat-label {
+  font-size: 12px;
+  font-weight: 400;
+  color: #6D6D6D;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  line-height: 1;
+}
+
+.hero__stat-divider {
+  width: 1px;
+  height: 40px;
+  background-color: #D5D5D5;
+  flex-shrink: 0;
+  align-self: center;
+}
+
+/* ===== Scroll indicator ===== */
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* ===== Responsive — Tablet (768–1023) ===== */
+@media (max-width: 1023px) {
+  .hero__heading {
+    font-size: 72px;
+    line-height: 80px;
+    letter-spacing: -4px;
+  }
+
+  .hero__line-inner {
+    font-size: 72px;
+    line-height: 80px;
+    letter-spacing: -4px;
+  }
+
+  .hero__word {
+    font-size: 72px;
+    line-height: 80px;
+    letter-spacing: -4px;
+  }
+
+  .hero__stats {
+    margin-top: 50px;
+  }
+
+  .hero__stat-block {
+    padding: 0 32px;
+  }
+
+  .hero__stat-number {
+    font-size: 30px;
+  }
+}
+
+/* ===== Responsive — Mobile (<768) ===== */
+@media (max-width: 767px) {
+  .hero {
+    height: auto;
+    min-height: 88vh;
+    padding-top: 64px;
+    padding-bottom: 80px;
+  }
+
+  .hero__content {
+    flex: 1;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+
+  .hero__heading {
+    font-size: 48px;
+    line-height: 54px;
+    letter-spacing: -2px;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .hero__line-inner {
+    font-size: 48px;
+    line-height: 54px;
+    letter-spacing: -2px;
+  }
+
+  .hero__word {
+    font-size: 48px;
+    line-height: 54px;
+    letter-spacing: -2px;
+  }
+
+  .hero__stats {
+    flex-direction: column;
+    gap: 24px;
+    margin-top: 40px;
+  }
+
+  .hero__stat-block {
+    padding: 0;
+  }
+
+  .hero__stat-divider {
+    width: 60px;
+    height: 1px;
+  }
+
+  .hero__stat-number {
+    font-size: 28px;
+    letter-spacing: -1.5px;
+  }
+
+  .hero__stat-label {
+    font-size: 11px;
+  }
+}

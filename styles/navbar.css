@@ -1,0 +1,146 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  background-color: transparent;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+.navbar--scrolled {
+  background-color: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+}
+
+/* Light hero variant — dark text by default */
+.navbar--light {
+  background-color: #ffffff;
+}
+
+.navbar--light .navbar__logo {
+  filter: none;
+  opacity: 1;
+}
+
+.navbar--light .navbar__link {
+  color: var(--color-text-nav);
+}
+
+.navbar--light .navbar__link:hover {
+  color: var(--color-text-primary);
+}
+
+.navbar--light .navbar__menu-btn span {
+  background-color: var(--color-text-primary);
+}
+
+.navbar__logo {
+  filter: brightness(0) invert(1);
+  opacity: 1;
+  transition: filter 0.3s ease, opacity 0.3s ease;
+}
+
+.navbar--scrolled .navbar__logo {
+  filter: none;
+  opacity: 1;
+}
+
+.navbar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.navbar__link {
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+.navbar__link:hover {
+  color: rgba(255, 255, 255, 1);
+}
+
+.navbar--scrolled .navbar__link {
+  color: var(--color-text-nav);
+}
+
+.navbar--scrolled .navbar__link:hover {
+  color: var(--color-text-primary);
+}
+
+.navbar__link--has-dropdown {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Mobile menu button */
+.navbar__menu-btn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+}
+
+.navbar__menu-btn span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: rgba(255, 255, 255, 0.6);
+  margin: 5px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar--scrolled .navbar__menu-btn span {
+  background-color: var(--color-text-primary);
+}
+
+/* Mobile drawer */
+.navbar__mobile-drawer {
+  position: fixed;
+  top: 64px;
+  left: 0;
+  right: 0;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(12px);
+  padding: 24px 20px;
+  z-index: 49;
+}
+
+.navbar__mobile-links {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  list-style: none;
+}
+
+.navbar__mobile-link {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-nav);
+  text-decoration: none;
+}
+
+@media (max-width: 767px) {
+  .navbar__links {
+    display: none;
+  }
+
+  .navbar__menu-btn {
+    display: block;
+  }
+}
