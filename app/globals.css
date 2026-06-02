@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+/* ===== Design System Theme ===== */
+@theme inline {
+  /* Colors */
+  --color-ie-bg: #FFFFFF;
+  --color-ie-primary: #121317;
+  --color-ie-nav: #45474E;
+  --color-ie-muted: #6D6D6D;
+  --color-ie-separator: #A5A5A5;
+  --color-ie-black: #000000;
+
+  /* Font Family */
+  --font-google-sans: "Google Sans", "Google Sans Text", sans-serif;
+
+  /* Font Sizes with line-height & letter-spacing */
+  --font-size-hero-heading: 100px;
+  --font-size-hero-heading--line-height: 110px;
+  --font-size-hero-heading--letter-spacing: -6px;
+
+  --font-size-hero-number: 35px;
+  --font-size-hero-number--letter-spacing: -2.1px;
+
+  --font-size-hero-sub: 16px;
+
+  --font-size-nav: 14px;
+
+  --font-size-brand-title: 22px;
+  --font-size-brand-title--letter-spacing: -0.88px;
+
+  --font-size-brand-sub: 14px;
+  --font-size-brand-sub--letter-spacing: -0.42px;
+
+  --font-size-brand-cta: 12px;
+  --font-size-brand-cta--letter-spacing: -0.48px;
+
+  /* Spacing */
+  --spacing-section-desktop: 100px;
+  --spacing-section-mobile: 50px;
+}
+
+/* ===== CSS Variables (for use outside Tailwind) ===== */
+:root {
+  --color-bg: #FFFFFF;
+  --color-text-primary: #121317;
+  --color-text-nav: #45474E;
+  --color-text-muted: #6D6D6D;
+  --color-text-black: #000000;
+  --color-separator: #A5A5A5;
+}
+
+/* ===== Global Resets ===== */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-bg);
+  color: var(--color-text-primary);
+  font-family: "Google Sans", "Google Sans Text", Arial, Helvetica, sans-serif;
+  overflow-x: clip;
+}
+
+/* ===== Container Utilities ===== */
+
+/* Standard container: max-width 1200px, centered */
+.container-standard {
+  width: 100%;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+/* Wide container: 100px padding on each side for screens > 1280px */
+/* Below 1280px it falls back to 20px padding */
+.container-wide {
+  width: 100%;
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@media (min-width: 1280px) {
+  .container-wide {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container-standard {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+
+  .container-wide {
+    padding-left: 40px;
+    padding-right: 40px;
+  }
+}
+
+@media (min-width: 1280px) {
+  .container-wide {
+    padding-left: 100px;
+    padding-right: 100px;
+  }
+}
+
+/* ===== Scroll Snap ===== */
+.snap-container {
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+  height: 100vh;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  min-height: 100vh;
+}
+
+/* Disable snap scroll on mobile for better UX */
+@media (max-width: 767px) {
+  .snap-container {
+    scroll-snap-type: none;
+    height: auto;
+    overflow-y: visible;
+  }
+
+  .snap-section {
+    scroll-snap-align: none;
+    min-height: auto;
+  }
+}
+
+/* ===== Selection ===== */
+::selection {
+  background-color: var(--color-text-primary);
+  color: var(--color-bg);
+}
