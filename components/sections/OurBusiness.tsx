@@ -3,7 +3,20 @@
 import Image from "next/image";
 import "../../styles/our-business.css";
 
-const businesses = [
+interface Business {
+  logo: string;
+  hoverLogo?: string;
+  name: string;
+  logoWidth?: number;
+  logoHeight?: number;
+  brandColor: string;
+  defaultLogoColor?: boolean;
+  description: string;
+  revenue: string;
+  label: string;
+}
+
+const businesses: Business[] = [
   {
     logo: "/assets/naukri_logo_ourbusiness.svg",
     hoverLogo: "/assets/naukri_logo.svg",
